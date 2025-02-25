@@ -1,14 +1,17 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .body {
-    background-image: url('New.banner.jpg'); 
+    background-image: url('ATÉ 1.png'); 
     background-size: cover; 
     width: 100%; 
-    height: 400px; 
+    height: 100vh; 
     padding: 20px; 
+    box-sizing: border-box;
 }
 
 .header {
@@ -16,11 +19,19 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    box-sizing: border-box;
 }
 
 .logo img {
+    color: #000000;
     max-width: 100%; 
     height: auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav ul {
@@ -28,17 +39,24 @@ body {
     padding: 0;
     display: flex;
     gap: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
-.nav a {
-    text-decoration:dotted;
-    color: rgb(252, 255, 255);
+.nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-.nav a:hover {
-    color: #ccc;
+.nav ul li a:hover {
+    color: #4ba6e6;
 }
 
 .btn {
@@ -53,12 +71,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 header {
@@ -79,31 +91,74 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
 section {
-    padding: 20px;
+    padding: 0px;
+}
+.video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.video-overlay i {
+    font-size: 2em;
+}
+#videoCarousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    position: relative;
+    background-color: #4ba6e6;
+}
+
+#videoCarousel .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoCarousel video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .games {
     display: flex; 
     justify-content: space-between; 
     align-items: flex-start;
+    flex-wrap: wrap;
 }
+
 .games .card {
     margin: 10px; 
     display: inline-block; 
     vertical-align: top;
+    flex: 1 1 calc(25% - 20px);
 }
+
 .card {
     text-align: center; 
-
 }
 
 .card img {
-    max-width:  100%;
+    max-width: 100%;
     height: auto; 
 }
 
@@ -111,16 +166,123 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
-.jogos{
+
+.jogos {
     text-align: center;
+    flex: 1 1 calc(25% - 20px);
+    box-sizing: border-box;
 }
-.jogos img{
+
+.jogos img {
     max-width: 100%;
     height: auto;
 }
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 20px 0;
+    position: center;
+    text-align: center;
+}
+
+.body {
+    background-image: url('ATÉ 1.png'); 
+    background-size: cover; 
+    width: 100%; 
+    height: 100vh; 
+    padding: 20px; 
+    box-sizing: border-box;
+    position: relative;
+}
+
+#promoCarousel {
+    display: none;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 80%; 
+    max-width: 1200px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; 
+}
+
+.carousel-text {
+    flex: 1;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-item,  .carousel-prev, .carousel-next {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    margin: 20px;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-prev, .carousel-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 footer {
-    background-color: #7d7d7d;
+    background-color:#4ba6e6;
     color: #fff;
     width: 100%;
     padding: 20px 0;
@@ -159,3 +321,11 @@ footer {
 .footer-bottom {
     margin-top: 20px;
 }
+
+main h2 {
+    color: #4ba6e6;
+}
+
+main h4 {
+    color: #4ba6e6;
+} 
